@@ -5,11 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation</title>
-    <link rel="stylesheet" href="./main.css"/>
+    <link rel="stylesheet" href="./scss/main.css"/>
     <link rel="icon" type="image/png" href="icons/lotus-flower.png"/>
 </head>
 <body>
-    
-    <script async src="./main.js"></script>
+<main class="main">
+    <div class="wrapper">
+        <button class="wrapper__btn">
+            <img class="wrapper__lotus" src="./icons/lotus.svg" />
+        </button>
+    </div>
+    <ul class="list">
+        <li class="list__item"data-sound="buddha">
+            <button class="list__btn">
+                <img class="list__icon" src="./icons/buddha.svg"/>
+            </button>
+        </li>
+        <li class="list__item" data-sound="group">
+            <button class="list__btn">
+                <img class="list__icon" src="./icons/group.svg"/>
+            </button>
+        </li>
+        <li class="list__item"data-sound="sunrise">
+            <button class="list__btn">
+                <img class="list__icon" src="./icons/sunrise.svg"/>
+            </button>
+        </li>
+        <li class="list__item" data-sound="star">
+            <button class="list__btn">
+                <img class="list__icon" src="./icons/star.svg"/>
+            </button>
+        </li>
+        <li class="list__item"data-sound="rain">
+            <button class="list__btn">
+                <img class="list__icon" src="./icons/rain.svg"/>
+            </button>
+        </li>
+    </ul>
+</main>
+<script async src="main.js"></script>
 </body>
 </html>
