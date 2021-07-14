@@ -5,13 +5,13 @@
   margin: 0;
 }
 
-html {
-  font-size: 62,5%;
-}
-
 .main {
   width: 100%;
   min-height: 100vh;
+  background: url("../meditation.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .wrapper {
@@ -26,14 +26,15 @@ html {
 
 .wrapper .wrapper__btn {
   width: 200px;
+  height: 200px;
   -webkit-transform: scale(1);
           transform: scale(1);
   border-radius: 50%;
   border: none;
-  background-color: rgba(110, 0, 59, 0.1);
-  padding: 2em;
+  background-color: rgba(110, 0, 59, 0);
   -webkit-animation: pulse 1.5s infinite;
           animation: pulse 1.5s infinite;
+  cursor: pointer;
 }
 
 .wrapper .wrapper__btn .wrapper__lotus {
@@ -45,6 +46,13 @@ html {
 
 .list {
   list-style: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .list .list__item {
@@ -54,20 +62,22 @@ html {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   opacity: 0;
-  -webkit-transition: .5s ease-out;
-  transition: .5s ease-out;
+  -webkit-transition: all .5s ease-out;
+  transition: all .5s ease-out;
+  -webkit-transition-delay: .2s;
+          transition-delay: .2s;
 }
 
 .list .list__item.buddha {
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 8%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   opacity: 1;
 }
 
-.list .list__item.group {
+.list .list__item.croud {
   position: absolute;
   top: 33%;
   left: 20%;
@@ -76,7 +86,7 @@ html {
   opacity: 1;
 }
 
-.list .list__item.sunrise {
+.list .list__item.beach {
   position: absolute;
   top: 27%;
   left: 50%;
@@ -85,7 +95,7 @@ html {
   opacity: 1;
 }
 
-.list .list__item.star {
+.list .list__item.stars {
   position: absolute;
   top: 33%;
   left: 80%;
@@ -97,7 +107,7 @@ html {
 .list .list__item.rain {
   position: absolute;
   top: 50%;
-  left: 90%;
+  left: 92%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   opacity: 1;
@@ -106,12 +116,22 @@ html {
 .list .list__item .list__btn {
   width: 50px;
   border-radius: 50%;
-  border: none;
-  padding: 5px;
+  border: 2px solid #cf534e;
+  background-color: rgba(207, 82, 78, 0.698);
+  padding: 7px;
+  cursor: pointer;
 }
 
 .list .list__item .list__icon {
   width: 100%;
+  font-weight: bold;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.list .list__item:hover .list__icon {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 @-webkit-keyframes pulse {

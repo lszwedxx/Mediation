@@ -4,28 +4,27 @@
     padding:0;
     margin:0;
 }
-html{
-    font-size: 62,5%;
-}
 .main{
     width:100%;
     min-height: 100vh;
+    background:url("../meditation.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .wrapper{
     width:auto;
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    @include positions(50%,50%);
     z-index: 2;
     .wrapper__btn{
         width:200px;
+        height:200px;
         transform: scale(1);
         border-radius: 50%;
         border:none;
-        background-color: rgba(110, 0, 59,.1);
-        padding:2em;
+        background-color: rgba(110, 0, 59,0);
         animation: pulse 1.5s infinite;
+        cursor: pointer;
         .wrapper__lotus {
             width:150px;
             opacity:0;
@@ -35,36 +34,47 @@ html{
 }
 .list{
     list-style: none;
+    width:100%;
+    height:100%;
+    @include positions(50%,50%);
     .list__item{
         @include positions(50%,50%);
         opacity:0;
-        transition: .5s ease-out;
+        transition:all .5s ease-out;
+        transition-delay: .2s;
         &.buddha{
-            @include positions(50%,10%);
+            @include positions(50%,8%);
             opacity:1;
         }
-        &.group{
+        &.croud{
             @include positions(33%,20%);
             opacity:1;
         }
-        &.sunrise{
+        &.beach{
             @include positions(27%,50%);
             opacity:1;
         }
-        &.star{
+        &.stars{
             @include positions(33%,80%);
             opacity:1;
         }
         &.rain{
-            @include positions(50%,90%);
+            @include positions(50%,92%);
             opacity:1;
         }
         .list__btn{
             @include btn;
-            padding:5px;
+            background-color: rgba(207, 82, 78, 0.698) ;
+            padding:7px;
+            cursor: pointer;
         }
         .list__icon{
             width:100%;
+            font-weight: bold;
+            transition: .3s;
+        }
+        &:hover .list__icon{
+            transform: scale(.8);
         }
     }
 }
