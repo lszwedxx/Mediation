@@ -79,8 +79,8 @@ html{
 }
 .list{
     list-style: none;
-    width:90%;
-    height:90%;
+    width:320px;
+    height:320px;
     @include positions(50%,50%);
     .list__item{
         @include positions(50%,50%);
@@ -92,15 +92,15 @@ html{
             opacity:1;
         }
         &.croud{
-            @include positions(33%,20%);
+            @include positions(23%,20%);
             opacity:1;
         }
         &.beach{
-            @include positions(27%,50%);
+            @include positions(10%,50%);
             opacity:1;
         }
         &.stars{
-            @include positions(33%,80%);
+            @include positions(23%,80%);
             opacity:1;
         }
         &.rain{
