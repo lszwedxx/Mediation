@@ -4,6 +4,9 @@
     padding:0;
     margin:0;
 }
+html{
+    font-size: 62,5%;
+}
 .main{
     width:100%;
     min-height: 100vh;
@@ -16,34 +19,76 @@
     width:auto;
     @include positions(50%,50%);
     z-index: 2;
+    .timer{
+        width:175px;
+        height:175px;
+        @include positions(50%,50%);
+        font-size: 2rem;
+        color:rgb(255, 255, 255);
+        .timer__time{
+            @include positions(50%,50%);
+        }
+        .timer__options{
+            width:70px;
+            @include positions(100%,100%);
+            background-color:rgb(95, 87, 98);
+            color: rgb(255, 255, 255);
+            border:2px solid rgb(123, 110, 128);
+            font-size: .4em;
+            text-align-last:center;
+            margin-top: 3.5rem;
+            padding:0.5em;
+        }
+        .timer__btn{
+            @include positions(100%,50%);
+            font-size: .5em;
+            margin-top: 3.5rem;
+            padding:0.4em 0.8em;
+            background-color:rgb(95, 87, 98);
+            color:rgb(255, 255, 255);
+            border-radius:20%;
+            border:2px solid rgb(123, 110, 128);
+            transition: .4s ;
+            &:hover{
+                background-color:rgba(196, 164, 149,0.7);
+                border:2px solid rgb(255, 255, 255);
+                font-size: .45em;
+            }
+        }
+    }
     .wrapper__btn{
         width:200px;
         height:200px;
         transform: scale(1);
         border-radius: 50%;
         border:none;
-        background-color: rgba(110, 0, 59,0);
-        animation: pulse 1.5s infinite;
+        background-color: inherit;
         cursor: pointer;
+        opacity:0;
+        &.active{
+            animation: pulse 1.5s infinite;
+            opacity:1;
+        }
         .wrapper__lotus {
             width:150px;
             opacity:0;
             animation: show 2s forwards;
+            pointer-events: none;
         }
     }
 }
 .list{
     list-style: none;
-    width:100%;
-    height:100%;
+    width:90%;
+    height:90%;
     @include positions(50%,50%);
     .list__item{
         @include positions(50%,50%);
         opacity:0;
         transition:all .5s ease-out;
-        transition-delay: .2s;
+        transition-delay: .4s;
         &.buddha{
-            @include positions(50%,8%);
+            @include positions(50%,10%);
             opacity:1;
         }
         &.croud{
@@ -59,12 +104,12 @@
             opacity:1;
         }
         &.rain{
-            @include positions(50%,92%);
+            @include positions(50%,90%);
             opacity:1;
         }
         .list__btn{
             @include btn;
-            background-color: rgba(207, 82, 78, 0.698) ;
+            background-color:rgb(95, 87, 98);
             padding:7px;
             cursor: pointer;
         }
@@ -73,9 +118,22 @@
             font-weight: bold;
             transition: .3s;
         }
+        &:hover .list__btn{
+            background-color:rgba(196, 164, 149,0.7);
+            border:2px solid rgb(255, 255, 255);
+        }
         &:hover .list__icon{
             transform: scale(.8);
         }
+    }
+}
+.timer{
+    @include positions(50%,50%);
+    @include btn(200px,200px);
+    opacity:0;
+    transition: .3s ;
+    &.active{
+        opacity:1;
     }
 }
 @keyframes pulse {
@@ -99,3 +157,4 @@
         opacity: 1;
     }
 }
+@import './media.scss';

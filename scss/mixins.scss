@@ -1,7 +1,8 @@
-@mixin btn{
-    width:50px;
+@mixin btn($width:45px,$height:45px){
+    width:$width;
+    height:$height;
     border-radius: 50%;
-    border:2px solid #cf534e;
+    border:2px solid rgb(123, 110, 128);
 }
 @mixin btn-background($image-path,$position:0 0,$repeat:no-repeat){
     background: {
