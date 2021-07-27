@@ -46,7 +46,7 @@ html{
             padding:0.4em 0.8em;
             background-color:rgb(95, 87, 98);
             color:rgb(255, 255, 255);
-            border-radius:20%;
+            border-radius:10%;
             border:2px solid rgb(123, 110, 128);
             transition: .4s ;
             &:hover{
@@ -64,10 +64,10 @@ html{
         border:none;
         background-color: inherit;
         cursor: pointer;
-        opacity:0;
+        display: none;
         &.active{
             animation: pulse 1.5s infinite;
-            opacity:1;
+            display: block;
         }
         .wrapper__lotus {
             width:150px;
@@ -112,11 +112,17 @@ html{
             background-color:rgb(95, 87, 98);
             padding:7px;
             cursor: pointer;
+            z-index: 3;
+            &.played{
+                background-color:rgba(196, 164, 149,0.7);
+                border:2px solid rgb(255, 255, 255);
+            }
         }
         .list__icon{
             width:100%;
             font-weight: bold;
             transition: .3s;
+            pointer-events: none;
         }
         &:hover .list__btn{
             background-color:rgba(196, 164, 149,0.7);

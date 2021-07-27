@@ -75,7 +75,7 @@ html {
   padding: 0.4em 0.8em;
   background-color: #5f5762;
   color: white;
-  border-radius: 20%;
+  border-radius: 10%;
   border: 2px solid #7b6e80;
   -webkit-transition: .4s;
   transition: .4s;
@@ -96,13 +96,13 @@ html {
   border: none;
   background-color: inherit;
   cursor: pointer;
-  opacity: 0;
+  display: none;
 }
 
 .wrapper .wrapper__btn.active {
   -webkit-animation: pulse 1.5s infinite;
           animation: pulse 1.5s infinite;
-  opacity: 1;
+  display: block;
 }
 
 .wrapper .wrapper__btn .wrapper__lotus {
@@ -190,6 +190,12 @@ html {
   background-color: #5f5762;
   padding: 7px;
   cursor: pointer;
+  z-index: 3;
+}
+
+.list .list__item .list__btn.played {
+  background-color: rgba(196, 164, 149, 0.7);
+  border: 2px solid white;
 }
 
 .list .list__item .list__icon {
@@ -197,6 +203,7 @@ html {
   font-weight: bold;
   -webkit-transition: .3s;
   transition: .3s;
+  pointer-events: none;
 }
 
 .list .list__item:hover .list__btn {
