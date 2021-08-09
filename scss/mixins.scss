@@ -4,13 +4,6 @@
     border-radius: 50%;
     border:2px solid rgb(123, 110, 128);
 }
-@mixin btn-background($image-path,$position:0 0,$repeat:no-repeat){
-    background: {
-        image: url($imgpath);
-        position: $position;
-        repeat: $repeat;
-    }
-}
 @mixin positions($top,$left){
     position: absolute;
     top:$top;

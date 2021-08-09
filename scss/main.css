@@ -29,15 +29,38 @@ html {
 }
 
 .wrapper .timer {
-  width: 175px;
-  height: 175px;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
   font-size: 2rem;
   color: white;
+  opacity: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.wrapper .timer.active {
+  opacity: 1;
+}
+
+.wrapper .timer .svg {
+  width: inherit;
+  height: inherit;
+}
+
+.wrapper .timer .svg .svg__circle {
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  fill: none;
+  stroke: #35293a;
+  stroke-width: 3px;
+  stroke-dasharray: 615;
 }
 
 .wrapper .timer .timer__time {
@@ -55,12 +78,13 @@ html {
   left: 100%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #5f5762;
+  background-color: #35293a;
   color: white;
   border: 2px solid #7b6e80;
   font-size: .4em;
   text-align-last: center;
   margin-top: 3.5rem;
+  margin-left: 1rem;
   padding: 0.5em;
 }
 
@@ -71,20 +95,47 @@ html {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   font-size: .5em;
+  letter-spacing: 2px;
   margin-top: 3.5rem;
-  padding: 0.4em 0.8em;
-  background-color: #5f5762;
-  color: white;
-  border-radius: 10%;
-  border: 2px solid #7b6e80;
+  padding: 0.5em 0.9em;
+  background-color: transparent;
+  color: #35293a;
+  border: none;
+  font-weight: bold;
   -webkit-transition: .4s;
   transition: .4s;
+  cursor: pointer;
 }
 
-.wrapper .timer .timer__btn:hover {
-  background-color: rgba(196, 164, 149, 0.7);
-  border: 2px solid white;
-  font-size: .45em;
+.wrapper .timer .timer__btn svg,
+.wrapper .timer .timer__btn svg rect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  pointer-events: none;
+}
+
+.wrapper .timer .timer__btn svg rect {
+  stroke: white;
+  stroke-width: 5px;
+  stroke-dasharray: 500,500;
+  -webkit-transition: .7s;
+  transition: .7s;
+  stroke-dashoffset: 0;
+}
+
+.wrapper .timer .timer__btn:hover svg rect {
+  stroke-dasharray: 100,400;
+  stroke-dashoffset: 270;
+}
+
+.wrapper .timer .timer__btn .slash {
+  color: white;
+  font-size: 1em;
+  padding: 3px;
 }
 
 .wrapper .wrapper__btn {
@@ -115,8 +166,8 @@ html {
 
 .list {
   list-style: none;
-  width: 320px;
-  height: 320px;
+  width: 370px;
+  height: 370px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -137,7 +188,7 @@ html {
           transition-delay: .4s;
 }
 
-.list .list__item.buddha {
+.list .list__item--buddha {
   position: absolute;
   top: 50%;
   left: 10%;
@@ -146,7 +197,7 @@ html {
   opacity: 1;
 }
 
-.list .list__item.croud {
+.list .list__item--croud {
   position: absolute;
   top: 23%;
   left: 20%;
@@ -155,7 +206,7 @@ html {
   opacity: 1;
 }
 
-.list .list__item.beach {
+.list .list__item--beach {
   position: absolute;
   top: 10%;
   left: 50%;
@@ -164,7 +215,7 @@ html {
   opacity: 1;
 }
 
-.list .list__item.stars {
+.list .list__item--stars {
   position: absolute;
   top: 23%;
   left: 80%;
@@ -173,7 +224,7 @@ html {
   opacity: 1;
 }
 
-.list .list__item.rain {
+.list .list__item--rain {
   position: absolute;
   top: 50%;
   left: 90%;
@@ -187,7 +238,7 @@ html {
   height: 45px;
   border-radius: 50%;
   border: 2px solid #7b6e80;
-  background-color: #5f5762;
+  background-color: #35293a;
   padding: 7px;
   cursor: pointer;
   z-index: 3;
@@ -214,25 +265,6 @@ html {
 .list .list__item:hover .list__icon {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
-}
-
-.timer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 2px solid #7b6e80;
-  opacity: 0;
-  -webkit-transition: .3s;
-  transition: .3s;
-}
-
-.timer.active {
-  opacity: 1;
 }
 
 @-webkit-keyframes pulse {
@@ -291,8 +323,8 @@ html {
 
 @media (min-width: 1000px) {
   .wrapper .timer {
-    width: 225px;
-    height: 225px;
+    width: 200px;
+    height: 200px;
     font-size: 2.5rem;
   }
   .wrapper .wrapper__btn {
